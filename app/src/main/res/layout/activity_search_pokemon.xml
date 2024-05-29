@@ -5,18 +5,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:gravity="center"
     tools:context=".SearchPokemonActivity">
 
     <EditText
-        android:id="@+id/et_pokemon_name"
+        android:id="@+id/editTextPokemonName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Pokemon name"
-        android:inputType="text"
-        android:layout_marginBottom="16dp" />
+        android:hint="Enter Pokémon name"
+        android:padding="12dp"
+        android:backgroundTint="#FF9800"
+        android:layout_marginBottom="16dp"
+        android:elevation="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="18sp" />
 
     <Button
-        android:id="@+id/btn_search"
+        android:id="@+id/btnSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search"
@@ -29,31 +34,19 @@
         android:textSize="18sp" />
 
     <ImageView
-        android:id="@+id/iv_pokemon_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:visibility="gone" />
+        android:id="@+id/imageViewPokemon"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="24dp"
+        android:visibility="gone"
+        android:contentDescription="Pokemon Image" />
 
     <TextView
-        android:id="@+id/tv_pokemon_info"
+        android:id="@+id/textViewPokemonName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
+        android:textSize="24sp"
+        android:layout_marginTop="8dp"
         android:visibility="gone" />
 
-    <Button
-        android:id="@+id/btn_add_to_pokedex"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add to Pokedex"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#FF9800"
-        android:padding="12dp"
-        android:elevation="4dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:visibility="gone" />
 </LinearLayout>
