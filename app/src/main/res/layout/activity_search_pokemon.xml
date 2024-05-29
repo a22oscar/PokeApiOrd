@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".SearchPokemonActivity">
+
+    <EditText
+        android:id="@+id/et_pokemon_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Pokemon name"
+        android:inputType="text"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btn_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FF9800"
+        android:padding="12dp"
+        android:elevation="4dp"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/iv_pokemon_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_pokemon_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_add_to_pokedex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add to Pokedex"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FF9800"
+        android:padding="12dp"
+        android:elevation="4dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" />
+</LinearLayout>
