@@ -16,6 +16,7 @@
         android:theme="@style/Theme.PokeApiOrd"
         tools:targetApi="31">
         <activity android:name=".SearchPokemonActivity" />
+        <activity android:name=".ViewPokemonListActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

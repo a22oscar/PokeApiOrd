@@ -16,5 +16,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, SearchPokemonActivity::class.java)
             startActivity(intent)
         }
+
+        val btnViewPokemonList = findViewById<Button>(R.id.btn_view_pokemon_list)
+        btnViewPokemonList.setOnClickListener {
+            val intent = Intent(this, ViewPokemonListActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
+
