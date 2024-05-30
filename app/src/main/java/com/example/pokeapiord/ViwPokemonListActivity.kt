@@ -1,6 +1,7 @@
 package com.example.pokeapiord
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -39,10 +40,10 @@ class ViewPokemonListActivity : AppCompatActivity() {
 
         for (name in namesList) {
             fetchPokemonData(name) { pokemon ->
-                val pokemonToAdd = pokemon ?: Pokemon(name.capitalize(), null)
-                pokemonList.add(pokemonToAdd)
-                if (pokemonList.size == remainingRequests) {
-                    runOnUiThread {
+                runOnUiThread {
+                    val pokemonToAdd = pokemon ?: Pokemon(name.capitalize(), null)
+                    pokemonList.add(pokemonToAdd)
+                    if (pokemonList.size == remainingRequests) {
                         val adapter = PokemonListAdapter(pokemonList)
                         recyclerView.adapter = adapter
                     }
@@ -52,7 +53,9 @@ class ViewPokemonListActivity : AppCompatActivity() {
     }
 
     private fun fetchPokemonData(pokemonName: String, callback: (Pokemon?) -> Unit) {
-        val url = "https://pokeapi.co/api/v2/pokemon/$pokemonName"
+        val lowercaseName = pokemonName.toLowerCase()  // Convertir el nombre a minúsculas
+        val url = "https://pokeapi.co/api/v2/pokemon/$lowercaseName"
+        Log.d("PokeAPI", "Fetching data for: $pokemonName with URL: $url")
         val request = Request.Builder().url(url).build()
 
         client.newCall(request).enqueue(object : Callback {
@@ -73,6 +76,7 @@ class ViewPokemonListActivity : AppCompatActivity() {
                         try {
                             val jsonResponse = JSONObject(responseBody)
                             val imageUrl = jsonResponse.getJSONObject("sprites").getString("front_default")
+                            Log.d("PokeAPI", "Image URL for $pokemonName: $imageUrl")
                             val pokemon = Pokemon(pokemonName.capitalize(), imageUrl)
                             callback(pokemon)
                         } catch (e: Exception) {
@@ -87,4 +91,3 @@ class ViewPokemonListActivity : AppCompatActivity() {
         })
     }
 }
-

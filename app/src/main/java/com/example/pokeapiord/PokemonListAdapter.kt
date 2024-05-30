@@ -1,5 +1,6 @@
 package com.example.pokeapiord
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,9 +29,14 @@ class PokemonListAdapter(private val pokemonList: List<Pokemon>) :
         val currentPokemon = pokemonList[position]
         holder.pokemonName.text = currentPokemon.name
         if (currentPokemon.imageUrl != null) {
-            Glide.with(holder.itemView.context).load(currentPokemon.imageUrl).into(holder.pokemonImage)
+            Log.d("PokeAPI", "Loading image for ${currentPokemon.name} from URL: ${currentPokemon.imageUrl}")
+            Glide.with(holder.itemView.context)
+                .load(currentPokemon.imageUrl)
+                .placeholder(R.drawable.default_pokemon_image_background)
+                .error(R.drawable.default_pokemon_image_background)
+                .into(holder.pokemonImage)
         } else {
-            holder.pokemonImage.setImageResource(R.drawable.default_pokemon_image_background)  // Reemplaza con el ID de tu imagen por defecto
+            holder.pokemonImage.setImageResource(R.drawable.default_pokemon_image_background)
         }
     }
 
