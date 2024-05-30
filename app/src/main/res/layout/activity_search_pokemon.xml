@@ -49,4 +49,32 @@
         android:layout_marginTop="8dp"
         android:visibility="gone" />
 
+    <TextView
+        android:id="@+id/textViewPokemonHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/textViewPokemonWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnReturnMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Return to Main"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FF9800"
+        android:padding="12dp"
+        android:elevation="4dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="18sp" />
 </LinearLayout>
